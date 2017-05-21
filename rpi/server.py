@@ -9,7 +9,7 @@ def hello():
     return "Hi my name is LG!"
 
 @app.route("/tv/<command>")
-def get_command(command):
+def run_tv_command(command):
     IrChiefCommander.blast(command)
     return command
 
