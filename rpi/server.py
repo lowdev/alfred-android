@@ -1,5 +1,6 @@
-import subprocess
+from irChiefCommander import IrChiefCommander
 
+import subprocess
 from flask import Flask
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ def hello():
 
 @app.route("/tv/<command>")
 def get_command(command):
-    subprocess.call(['irsend', '-d', '/run/lirc/lircd-lirc0', 'SEND_ONCE', 'LG', command])
+    IrChiefCommander.blast(command)
     return command
 
 if __name__ == "__main__":

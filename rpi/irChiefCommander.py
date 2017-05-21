@@ -7,4 +7,4 @@ class IrChiefCommander(object):
 
     @staticmethod
     def blast(command):
-        subprocess.call(list(BASE_COMMAND).append(command))
+        subprocess.call(['irsend', '-d', '/run/lirc/lircd-lirc0', 'SEND_ONCE', 'LG', command])
