@@ -3,13 +3,13 @@ class TvCommandInterpreter:
 
     @staticmethod
     def interpret(text):
-        if text == 'av1'
-            return ['tvrad', 'input', 'KEY_RIGHT', 'KEY_OK']           
+        if text == 'av1':
+            return ['tvrad', 'time1', 'input', 'input', 'KEY_OK']           
 
         if text == 'hdmi1':
-            return ['tvrad', 'input', 'KEY_RIGHT', 'KEY_RIGHT', 'KEY_OK']
+            return ['tvrad', 'time1', 'input', 'input', 'input', 'KEY_OK']
 
         if text == 'hdmi2':
-            return ['tvrad', 'input', 'KEY_RIGHT', 'KEY_RIGHT', 'KEY_RIGHT', 'KEY_OK']
+            return ['tvrad', 'time1', 'input', 'input', 'input', 'input', 'KEY_OK']
 
-        return text
+        return [text]

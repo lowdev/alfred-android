@@ -1,4 +1,5 @@
 from irChiefCommander import IrChiefCommander
+from tvCommandInterpreter import TvCommandInterpreter
 
 import subprocess
 from flask import Flask
@@ -10,7 +11,8 @@ def hello():
 
 @app.route("/tv/<command>")
 def run_tv_command(command):
-    IrChiefCommander.blast(command)
+    intent = TvCommandInterpreter.interpret(command)
+    IrChiefCommander.blast(intent)
     return command
 
 if __name__ == "__main__":
